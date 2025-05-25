@@ -4,11 +4,16 @@
 
 {% block content %}
 <h1>Новости</h1>
+
 {% for new in news %}
   <div>
-    <h3> {{ new.title }} </h3>
-    <p> {{ new.short_description }} </p>
-    <p><strong>Автор:</strong> {{ new.user.username }}</p>
+    <h4>{{ new.title }}</h4>
+    <p>{{ new.short_description }}</p>
+    <p>{{ new.text }}</p>
+    <p>Автор: {{ new.user.username }} | Дата публикации: {{ new.pub_date }}</p>
   </div>
+{% empty %}
+  <p>Нет доступных новостей.</p>
 {% endfor %}
+
 {% endblock %}
