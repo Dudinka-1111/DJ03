@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Новостная страница{% endblock %}
+
+{% block content %}
+<h1>Новости</h1>
+{% for new in news %}
+  <div>
+    <h3> {{ new.title }} </h3>
+    <p> {{ new.short_description }} </p>
+    <p><strong>Автор:</strong> {{ new.user.username }}</p>
+  </div>
+{% endfor %}
+{% endblock %}
